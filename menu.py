@@ -16,35 +16,44 @@ dropdown_options = driver.find_elements(By.XPATH, "//ul[@id='building_6113ef5ae8
 # Iterate through dining halls
 for option in dropdown_options:
     dropdown_menu.click()
-    # Wait for dropdown menu to load and then click on an option
-    WebDriverWait(driver, 10).until(EC.element_to_be_clickable(option)).click()
 
-    dining_hall_menu = []
     try:
-        # Wait until period tabs have loaded
-        WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, "//div[@class='tabs menu-periods']")))
+        # Wait for dropdown menu to load and then click on an option
+        WebDriverWait(driver, 10).until(EC.element_to_be_clickable(option)).click()
+        # Wait until period tabs have loaded and then extract
+        WebDriverWait(driver, 30).until(EC.any_of(EC.presence_of_all_elements_located((By.XPATH, "//ul[@class='nav nav-tabs']//li/a")),
+                                                  EC.text_to_be_present_in_element((By.XPATH, "//div[@class='loading-content_loadingText_22OQi']"),
+                                                                                   "Sorry, we weren't able to find menus for this location for the day you selected.")))
     except:
         continue
     # Extract the tabs
     period_tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
-    for tab in period_tabs:
-        tab.click()
-        
+    if not period_tabs:
+        continue
+    
+    dining_hall_menu = {}
+
+    for tab in period_tabs:        
         try:
+            WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
             table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@aria-hidden='false']")))
+            WebDriverWait(table, 10).until_not(EC.presence_of_element_located((By.XPATH, "//div[@class='loading-content_loadingText22OQi']")))
         except:
             continue
             
-        period = tab.text
-        print(period)
+        stations_menu = []
 
         stations = table.find_elements(By.TAG_NAME, "table")
+        if not stations:
+            continue
+
         for station in stations:
             caption = station.find_element(By.XPATH, "caption")
-            print(caption.text)
+            stations_menu.append(caption.text)
+        
+        dining_hall_menu[tab.text] = stations_menu
 
-    dining_hall = option.get_attribute("textContent").strip()
-    menu[dining_hall] = dining_hall_menu
+    menu[option.get_attribute("textContent").strip()] = dining_hall_menu
     
 print(menu)
 driver.quit()
