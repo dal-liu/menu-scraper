@@ -4,6 +4,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+def _create_stations_list(stations):
+    period_stations = []
+    for station in stations:
+        period_stations.append(_create_station(station))
+    return period_stations
+
+
 def _create_station(station):
     period_items = []
     items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
@@ -64,13 +71,7 @@ for option in dropdown_options:
             stations = table.find_elements(By.TAG_NAME, "table")
             if not stations:
                 continue
-            # List of stations
-            period_stations = []
-
-            for station in stations:
-                period_stations.append(_create_station(station))
-            
-            dining_period["stations"] = period_stations[:]
+            dining_period["stations"] = _create_stations_list(stations)
 
         dining_periods.append(dining_period)
 
