@@ -3,6 +3,29 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+
+def _create_station(station):
+    period_items = []
+    items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
+    for item in items:
+        period_items.append(_create_item(item))
+    
+    return {
+        "name": station.find_element(By.TAG_NAME, "caption").text,
+        "items": period_items
+    }
+
+
+def _create_item(item):
+    properties = item.find_elements(By.TAG_NAME, "td")
+    return {
+        "name": properties[0].find_element(By.TAG_NAME, "strong").text.strip(),
+        # "description": properties[0].find_element(By.XPATH, "div/span").text,
+        "portion": properties[1].text,
+        "calories": int(properties[2].text)
+    }
+
+
 menu = {}
 
 driver = webdriver.Chrome()
@@ -17,7 +40,7 @@ dropdown_options = driver.find_elements(By.XPATH, "//ul[@id='building_6113ef5ae8
 for option in dropdown_options:
     dropdown_menu.click()
     # Dict with keys of time periods and values of the stations and food
-    dining_hall_menu = {}
+    dining_periods = []
 
     try:
         # Wait for dropdown menu to load and then click on an option
@@ -31,7 +54,8 @@ for option in dropdown_options:
     # Extract the tabs
     period_tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
     if period_tabs:
-        for tab in period_tabs:        
+        for tab in period_tabs:
+            dining_period = { "name" : tab.text }
             try:
                 WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
                 table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='tabpanel' and @aria-hidden='false']")))
@@ -41,16 +65,26 @@ for option in dropdown_options:
             stations = table.find_elements(By.TAG_NAME, "table")
             if not stations:
                 continue
-            # List of stations. TODO each station should be a dict of dicts
-            stations_menu = []
+            # List of stations
+            period_stations = []
 
             for station in stations:
-                caption = station.find_element(By.XPATH, "caption")
-                stations_menu.append(caption.text)
-            
-            dining_hall_menu[tab.text] = stations_menu
+                caption = station.find_element(By.TAG_NAME, "caption").text
+                period_station = { "name" : caption }
+                period_items = []
 
-    menu[option.get_attribute("textContent").strip()] = dining_hall_menu
+                items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
+                for item in items:
+                    period_items.append(_create_item(item))
+
+                period_station["items"] = period_items
+                period_stations.append(period_station)
+            
+            dining_period["stations"] = period_stations
+
+        dining_periods.append(dining_period)
+
+    menu[option.get_attribute("textContent").strip()] = dining_periods
     
 print(menu)
 driver.quit()
