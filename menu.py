@@ -9,7 +9,6 @@ def _create_station(station):
     items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
     for item in items:
         period_items.append(_create_item(item))
-    
     return {
         "name": station.find_element(By.TAG_NAME, "caption").text,
         "items": period_items
@@ -69,18 +68,9 @@ for option in dropdown_options:
             period_stations = []
 
             for station in stations:
-                caption = station.find_element(By.TAG_NAME, "caption").text
-                period_station = { "name" : caption }
-                period_items = []
-
-                items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
-                for item in items:
-                    period_items.append(_create_item(item))
-
-                period_station["items"] = period_items
-                period_stations.append(period_station)
+                period_stations.append(_create_station(station))
             
-            dining_period["stations"] = period_stations
+            dining_period["stations"] = period_stations[:]
 
         dining_periods.append(dining_period)
 
