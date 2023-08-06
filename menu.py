@@ -4,21 +4,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def _create_stations_list(stations):
-    period_stations = []
-    for station in stations:
-        period_stations.append(_create_station(station))
-    return period_stations
-
-
-def _create_station(station):
-    period_items = []
-    items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
-    for item in items:
-        period_items.append(_create_item(item))
+def _create_station(items):
     return {
         "name": station.find_element(By.TAG_NAME, "caption").text,
-        "items": period_items
+        "items": [_create_item(item) for item in items]
     }
 
 
@@ -46,7 +35,7 @@ dropdown_options = driver.find_elements(By.XPATH, "//ul[@id='building_6113ef5ae8
 for option in dropdown_options:
     dropdown_menu.click()
     # Dict with keys of time periods and values of the stations and food
-    dining_periods = []
+    dining_hall = []
 
     try:
         # Wait for dropdown menu to load and then click on an option
@@ -61,7 +50,6 @@ for option in dropdown_options:
     period_tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
     if period_tabs:
         for tab in period_tabs:
-            dining_period = { "name" : tab.text }
             try:
                 WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
                 table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='tabpanel' and @aria-hidden='false']")))
@@ -71,11 +59,22 @@ for option in dropdown_options:
             stations = table.find_elements(By.TAG_NAME, "table")
             if not stations:
                 continue
-            dining_period["stations"] = _create_stations_list(stations)
 
-        dining_periods.append(dining_period)
+            stations_list = []
+            for station in stations:
+                items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
+                if not items:
+                    continue
 
-    menu[option.get_attribute("textContent").strip()] = dining_periods
+                stations_list.append(_create_station(items))
+            
+            if stations_list:
+                dining_hall.append({
+                    "name": tab.text,
+                    "stations": [station for station in stations_list]
+                })
+
+    menu[option.get_attribute("textContent").strip()] = dining_hall
     
 print(menu)
 driver.quit()
