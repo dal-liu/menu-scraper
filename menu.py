@@ -1,10 +1,19 @@
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def _create_station(items):
+def _create_stations_list(stations):
+    stations_list = []
+    for station in stations:
+        items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
+        stations_list.append(_create_station(station, items))
+    return stations_list
+
+
+def _create_station(station, items):
     return {
         "name": station.find_element(By.TAG_NAME, "caption").text,
         "items": [_create_item(item) for item in items]
@@ -59,22 +68,15 @@ for option in dropdown_options:
             stations = table.find_elements(By.TAG_NAME, "table")
             if not stations:
                 continue
-
-            stations_list = []
-            for station in stations:
-                items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
-                if not items:
-                    continue
-
-                stations_list.append(_create_station(items))
             
-            if stations_list:
-                dining_hall.append({
-                    "name": tab.text,
-                    "stations": [station for station in stations_list]
-                })
+            dining_hall.append({
+                "name": tab.text,
+                "stations": _create_stations_list(stations)
+            })
 
     menu[option.get_attribute("textContent").strip()] = dining_hall
     
-print(menu)
+with open("menu.json", "w") as json_file:
+    json.dump(menu, json_file)
+
 driver.quit()
