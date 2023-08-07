@@ -9,7 +9,7 @@ def create_menu():
     pass
 
 
-def _create_time_periods_list(driver):
+def _create_periods_list(driver):
     tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
     periods_list = []
     if tabs:
@@ -17,32 +17,43 @@ def _create_time_periods_list(driver):
             try:
                 WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
                 table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='tabpanel' and @aria-hidden='false']")))
-                WebDriverWait(table, 30).until(EC.presence_of_element_located((By.XPATH, "//div[@class='row menu-period-dropdowns']"))) #TODO: need to add retry in case fetching fails
+                WebDriverWait(table, 30).until(EC.any_of(EC.presence_of_element_located((By.XPATH, "//div[@class='row menu-period-dropdowns']")),
+                                                         EC.text_to_be_present_in_element((By.XPATH, "//div[@class='loading-content_loadingText_22OQi']"),
+                                                                                          "Sorry, we weren't able to find menus for this location for the day you selected.")))
             except:
                 continue
             stations = table.find_elements(By.TAG_NAME, "table")
             if not stations:
                 continue   
-            periods_list.append({
-                "name": tab.text,
-                "stations": _create_stations_list(stations)
-            })
+            periods_list.append(_create_period(tab.text, stations))
     return periods_list
+
+
+def _create_period(tab_name, stations):
+    return {
+        "name": tab_name,
+        "stations": _create_stations_list(stations)
+    }
 
 
 def _create_stations_list(stations):
     stations_list = []
     for station in stations:
         items = station.find_elements(By.XPATH, "tbody[@role='rowgroup']/tr")
-        stations_list.append(_create_station(station, items))
+        stations_list.append(_create_station(station.find_element(By.TAG_NAME, "caption").text, 
+                                             items))
     return stations_list
 
 
-def _create_station(station, items):
+def _create_station(station_name, items):
     return {
-        "name": station.find_element(By.TAG_NAME, "caption").text,
-        "items": [_create_item(item) for item in items]
+        "name": station_name,
+        "items": _create_items_list(items)
     }
+
+
+def _create_items_list(items):
+    return [_create_item(item) for item in items]
 
 
 def _create_item(item):
@@ -81,27 +92,9 @@ for option in dropdown_options:
     except:
         continue
     # Extract the tabs
-    period_tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
-    if period_tabs:
-        for tab in period_tabs:
-            try:
-                WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
-                table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='tabpanel' and @aria-hidden='false']")))
-                WebDriverWait(table, 30).until(EC.presence_of_element_located((By.XPATH, "//div[@class='row menu-period-dropdowns']"))) #TODO: need to add retry in case fetching fails
-            except:
-                continue
-            stations = table.find_elements(By.TAG_NAME, "table")
-            if not stations:
-                continue
-            
-            dining_hall.append({
-                "name": tab.text,
-                "stations": _create_stations_list(stations)
-            })
-
-    menu[option.get_attribute("textContent").strip()] = dining_hall
+    menu[option.get_attribute("textContent").strip()] = _create_periods_list(driver)
     
 with open("menu.json", "w") as json_file:
-    json.dump(menu, json_file)
+    json.dump(menu, json_file, indent=4)
 
 driver.quit()

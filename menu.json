@@ -1,121 +1,6 @@
 {
     "Allison Dining Commons": [
         {
-            "name": "Breakfast",
-            "stations": [
-                {
-                    "name": "Comfort 1",
-                    "items": [
-                        {
-                            "name": "Scrambled Eggs",
-                            "portion": "1/2 cup",
-                            "calories": 200
-                        },
-                        {
-                            "name": "Turkey Sausage Link",
-                            "portion": "1 each",
-                            "calories": 50
-                        },
-                        {
-                            "name": "Chocolate Chip Pancakes",
-                            "portion": "2 each",
-                            "calories": 290
-                        },
-                        {
-                            "name": "Sweet Potato Hash",
-                            "portion": "1/2 cup",
-                            "calories": 100
-                        }
-                    ]
-                },
-                {
-                    "name": "Fruit & Yogurt",
-                    "items": [
-                        {
-                            "name": "Low Fat Vanilla Yogurt",
-                            "portion": "1/2 cup",
-                            "calories": 110
-                        },
-                        {
-                            "name": "Yogurt, Strawberry, Lite, Yoplait, 6 oz",
-                            "portion": "1 each",
-                            "calories": 80
-                        },
-                        {
-                            "name": "2% Greek Plain Yogurt",
-                            "portion": "1/2 cup",
-                            "calories": 90
-                        },
-                        {
-                            "name": "Cubed Pineapple",
-                            "portion": "1/4 cup",
-                            "calories": 20
-                        },
-                        {
-                            "name": "Cubed Cantaloupe",
-                            "portion": "1/4 cup",
-                            "calories": 15
-                        },
-                        {
-                            "name": "Cubed Honeydew",
-                            "portion": "1/4 cup",
-                            "calories": 15
-                        },
-                        {
-                            "name": "Banana",
-                            "portion": "1 each",
-                            "calories": 110
-                        },
-                        {
-                            "name": "Grapefruit",
-                            "portion": "1 half",
-                            "calories": 35
-                        },
-                        {
-                            "name": "Granny Smith Apple",
-                            "portion": "1 each",
-                            "calories": 100
-                        },
-                        {
-                            "name": "Orange",
-                            "portion": "1 each",
-                            "calories": 60
-                        },
-                        {
-                            "name": "Oats 'n Honey Granola",
-                            "portion": "3 tbsp",
-                            "calories": 60
-                        },
-                        {
-                            "name": "Red Seedless Grapes",
-                            "portion": "1/4 cup",
-                            "calories": 25
-                        },
-                        {
-                            "name": "Green Seedless Grapes",
-                            "portion": "1/4 cup",
-                            "calories": 30
-                        }
-                    ]
-                },
-                {
-                    "name": "Bakery-Dessert",
-                    "items": [
-                        {
-                            "name": "Banana Bread",
-                            "portion": "1 slice",
-                            "calories": 170
-                        },
-                        {
-                            "name": "Vegan Banana Muffins",
-                            "portion": "3 oz portion",
-                            "calories": 160
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "Lunch",
             "stations": [
                 {
@@ -548,6 +433,126 @@
     ],
     "Sargent Dining Commons": [],
     "Foster Walker Plex West": [
+        {
+            "name": "Breakfast",
+            "stations": [
+                {
+                    "name": "Comfort",
+                    "items": [
+                        {
+                            "name": "Scrambled Eggs",
+                            "portion": "1/2 cup",
+                            "calories": 200
+                        },
+                        {
+                            "name": "French Toast Casserole wtih Chia Seeds",
+                            "portion": "4 ounce",
+                            "calories": 530
+                        },
+                        {
+                            "name": "Pork Sausage Patty",
+                            "portion": "1 each",
+                            "calories": 180
+                        },
+                        {
+                            "name": "Tater Tots",
+                            "portion": "1/2 cup",
+                            "calories": 140
+                        },
+                        {
+                            "name": "Oatmeal",
+                            "portion": "1 ladle-4oz",
+                            "calories": 90
+                        }
+                    ]
+                },
+                {
+                    "name": "Bakery-Dessert",
+                    "items": [
+                        {
+                            "name": "Banana Bread",
+                            "portion": "1 slice",
+                            "calories": 170
+                        },
+                        {
+                            "name": "Vegan Banana Muffins",
+                            "portion": "3 oz portion",
+                            "calories": 160
+                        }
+                    ]
+                },
+                {
+                    "name": "Fruit & Yogurt",
+                    "items": [
+                        {
+                            "name": "Low Fat Vanilla Yogurt",
+                            "portion": "1/2 cup",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Yogurt, Strawberry, Lite, Yoplait, 6 oz",
+                            "portion": "1 each",
+                            "calories": 80
+                        },
+                        {
+                            "name": "2% Greek Plain Yogurt",
+                            "portion": "1/2 cup",
+                            "calories": 90
+                        },
+                        {
+                            "name": "Cubed Pineapple",
+                            "portion": "1/4 cup",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Cubed Cantaloupe",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Cubed Honeydew",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Banana",
+                            "portion": "1 each",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Grapefruit",
+                            "portion": "1 half",
+                            "calories": 35
+                        },
+                        {
+                            "name": "Granny Smith Apple",
+                            "portion": "1 each",
+                            "calories": 100
+                        },
+                        {
+                            "name": "Orange",
+                            "portion": "1 each",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Oats 'n Honey Granola",
+                            "portion": "3 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Red Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 25
+                        },
+                        {
+                            "name": "Green Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 30
+                        }
+                    ]
+                }
+            ]
+        },
         {
             "name": "Lunch",
             "stations": [
