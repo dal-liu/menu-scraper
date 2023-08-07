@@ -5,6 +5,31 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+def create_menu():
+    pass
+
+
+def _create_time_periods_list(driver):
+    tabs = driver.find_elements(By.XPATH, "//ul[@class='nav nav-tabs']//li/a")
+    periods_list = []
+    if tabs:
+        for tab in tabs:
+            try:
+                WebDriverWait(driver, 3).until(EC.element_to_be_clickable(tab)).click()
+                table = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//div[@role='tabpanel' and @aria-hidden='false']")))
+                WebDriverWait(table, 30).until(EC.presence_of_element_located((By.XPATH, "//div[@class='row menu-period-dropdowns']"))) #TODO: need to add retry in case fetching fails
+            except:
+                continue
+            stations = table.find_elements(By.TAG_NAME, "table")
+            if not stations:
+                continue   
+            periods_list.append({
+                "name": tab.text,
+                "stations": _create_stations_list(stations)
+            })
+    return periods_list
+
+
 def _create_stations_list(stations):
     stations_list = []
     for station in stations:
