@@ -7,29 +7,94 @@
                     "name": "Comfort 1",
                     "items": [
                         {
-                            "name": "Turkey Sausage Link",
-                            "portion": "1 each",
-                            "calories": 50
+                            "name": "Scrambled Eggs",
+                            "portion": "1/2 cup",
+                            "calories": 200
                         },
                         {
-                            "name": "Turkey Bacon",
-                            "portion": "3 slice",
-                            "calories": 50
+                            "name": "Canadian Bacon",
+                            "portion": "1 slice",
+                            "calories": 70
                         },
                         {
-                            "name": "Chocolate Chip Pancakes",
-                            "portion": "2 each",
-                            "calories": 290
+                            "name": "Roasted Potatoes",
+                            "portion": "4 ounce",
+                            "calories": 120
                         },
                         {
                             "name": "Cinnamon French Toast",
                             "portion": "2 half",
                             "calories": 210
+                        }
+                    ]
+                },
+                {
+                    "name": "Fruit & Yogurt",
+                    "items": [
+                        {
+                            "name": "Low Fat Vanilla Yogurt",
+                            "portion": "1/2 cup",
+                            "calories": 110
                         },
                         {
-                            "name": "Sweet Potato Hash",
+                            "name": "Yogurt, Strawberry, Lite, Yoplait, 6 oz",
+                            "portion": "1 each",
+                            "calories": 80
+                        },
+                        {
+                            "name": "2% Greek Plain Yogurt",
                             "portion": "1/2 cup",
+                            "calories": 90
+                        },
+                        {
+                            "name": "Cubed Pineapple",
+                            "portion": "1/4 cup",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Cubed Cantaloupe",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Cubed Honeydew",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Banana",
+                            "portion": "1 each",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Grapefruit",
+                            "portion": "1 half",
+                            "calories": 35
+                        },
+                        {
+                            "name": "Granny Smith Apple",
+                            "portion": "1 each",
                             "calories": 100
+                        },
+                        {
+                            "name": "Orange",
+                            "portion": "1 each",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Oats 'n Honey Granola",
+                            "portion": "3 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Red Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 25
+                        },
+                        {
+                            "name": "Green Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 30
                         }
                     ]
                 },
@@ -37,14 +102,14 @@
                     "name": "Bakery-Dessert",
                     "items": [
                         {
-                            "name": "Banana Bread",
-                            "portion": "1 slice",
-                            "calories": 170
+                            "name": "Chocolate and Sprinkles Donut",
+                            "portion": "1 each",
+                            "calories": 450
                         },
                         {
-                            "name": "Mini Cinnamon Swirl Danish",
-                            "portion": "1 each",
-                            "calories": 150
+                            "name": "Vegan Banana Muffins",
+                            "portion": "3 oz portion",
+                            "calories": 160
                         }
                     ]
                 }
@@ -57,24 +122,164 @@
                     "name": "Comfort 1",
                     "items": [
                         {
-                            "name": "Pollo Guisado",
-                            "portion": "4 oz meat",
-                            "calories": 210
+                            "name": "Braised Beef Stew",
+                            "portion": "8 oz portion",
+                            "calories": 440
                         },
                         {
-                            "name": "Basmati Rice",
+                            "name": "G8 Garlic Herb Meatloaf",
+                            "portion": "4 ounce",
+                            "calories": 240
+                        },
+                        {
+                            "name": "White Rice",
+                            "portion": "1/2 cup",
+                            "calories": 120
+                        },
+                        {
+                            "name": "Lentil Bolognese",
+                            "portion": "8 ounce",
+                            "calories": 140
+                        },
+                        {
+                            "name": "Steamed Yellow Squash, Zucchini",
+                            "portion": "1/2 cup",
+                            "calories": 15
+                        }
+                    ]
+                },
+                {
+                    "name": "Rooted 2",
+                    "items": [
+                        {
+                            "name": "Low Fat Vanilla Yogurt",
                             "portion": "1/2 cup",
                             "calories": 110
                         },
                         {
-                            "name": "Bean Cassoulet",
-                            "portion": "1 cup",
+                            "name": "Yogurt, Strawberry, Lite, Yoplait, 6 oz",
+                            "portion": "1 each",
+                            "calories": 80
+                        },
+                        {
+                            "name": "2% Greek Plain Yogurt",
+                            "portion": "1/2 cup",
+                            "calories": 90
+                        },
+                        {
+                            "name": "Cubed Pineapple",
+                            "portion": "1/4 cup",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Cubed Cantaloupe",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Cubed Honeydew",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Banana",
+                            "portion": "1 each",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Grapefruit",
+                            "portion": "1 half",
+                            "calories": 35
+                        },
+                        {
+                            "name": "Granny Smith Apple",
+                            "portion": "1 each",
                             "calories": 100
                         },
                         {
-                            "name": "Roasted Brussels Sprouts",
-                            "portion": "1/2 cup",
-                            "calories": 45
+                            "name": "Orange",
+                            "portion": "1 each",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Oats 'n Honey Granola",
+                            "portion": "3 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Red Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 25
+                        },
+                        {
+                            "name": "Green Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 30
+                        }
+                    ]
+                },
+                {
+                    "name": "Fruit & Yogurt",
+                    "items": [
+                        {
+                            "name": "Romaine Blend",
+                            "portion": "1 cup",
+                            "calories": 10
+                        },
+                        {
+                            "name": "Spring Mix",
+                            "portion": "1 cup",
+                            "calories": 5
+                        },
+                        {
+                            "name": "Sliced Cucumber",
+                            "portion": "1 ounce",
+                            "calories": 0
+                        },
+                        {
+                            "name": "Cherry Tomatoes",
+                            "portion": "1 ounce",
+                            "calories": 5
+                        },
+                        {
+                            "name": "Sliced Red Onion",
+                            "portion": "1 ounce",
+                            "calories": 10
+                        },
+                        {
+                            "name": "Croutons",
+                            "portion": "1 ounce",
+                            "calories": 70
+                        },
+                        {
+                            "name": "Shredded Cheddar Cheese",
+                            "portion": "1 tbsp",
+                            "calories": 30
+                        },
+                        {
+                            "name": "Ranch Dressing",
+                            "portion": "2 floz",
+                            "calories": 210
+                        },
+                        {
+                            "name": "Caesar Dressing",
+                            "portion": "1 floz",
+                            "calories": 150
+                        },
+                        {
+                            "name": "Fat Free Italian Dressing",
+                            "portion": "1 floz",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Extra Virgin Olive Oil",
+                            "portion": "1 floz",
+                            "calories": 240
+                        },
+                        {
+                            "name": "Balsamic Vinegar",
+                            "portion": "1/2 floz",
+                            "calories": 15
                         }
                     ]
                 },
@@ -82,9 +287,29 @@
                     "name": "Flame 2",
                     "items": [
                         {
-                            "name": "Pepperoni Pizza",
+                            "name": "Cheese Pizza",
                             "portion": "1 slice",
-                            "calories": 250
+                            "calories": 210
+                        },
+                        {
+                            "name": "Ham Pizza",
+                            "portion": "1 slice",
+                            "calories": 240
+                        },
+                        {
+                            "name": "Crushed Red Pepper",
+                            "portion": "1 tsp",
+                            "calories": 5
+                        },
+                        {
+                            "name": "Dried Oregano",
+                            "portion": "1 tsp",
+                            "calories": 0
+                        },
+                        {
+                            "name": "Grated Parmesan Cheese",
+                            "portion": "1 tsp",
+                            "calories": 10
                         }
                     ]
                 },
@@ -92,9 +317,14 @@
                     "name": "Bakery-Dessert",
                     "items": [
                         {
-                            "name": "Iced Lemon Cookie Bar",
-                            "portion": "1 piece",
-                            "calories": 320
+                            "name": "Sugar Cookie",
+                            "portion": "1 each",
+                            "calories": 210
+                        },
+                        {
+                            "name": "Deluxe Blondies",
+                            "portion": "1 serving(s)",
+                            "calories": 300
                         }
                     ]
                 }
@@ -107,24 +337,169 @@
                     "name": "Comfort 1",
                     "items": [
                         {
-                            "name": "Chipotle Orange Chicken Leg, Thigh",
-                            "portion": "1 serving(s)",
-                            "calories": 280
-                        },
-                        {
-                            "name": "cilantro lime rice",
+                            "name": "Orange Beef Stir Fry",
                             "portion": "3/4 cup",
-                            "calories": 170
+                            "calories": 330
                         },
                         {
-                            "name": "Vegan Caribbean Stew",
+                            "name": "Rosemary Tomato Potatoes",
+                            "portion": "1/2 cup",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Sweet Potato and Spinach Vindaloo",
                             "portion": "1 cup",
+                            "calories": 230
+                        },
+                        {
+                            "name": "Steamed Vegetable Medley",
+                            "portion": "1/2 cup",
+                            "calories": 15
+                        }
+                    ]
+                },
+                {
+                    "name": "Rooted 2",
+                    "items": [
+                        {
+                            "name": "Low Fat Vanilla Yogurt",
+                            "portion": "1/2 cup",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Yogurt, Strawberry, Lite, Yoplait, 6 oz",
+                            "portion": "1 each",
                             "calories": 80
                         },
                         {
-                            "name": "Steamed Zucchini",
+                            "name": "2% Greek Plain Yogurt",
                             "portion": "1/2 cup",
+                            "calories": 90
+                        },
+                        {
+                            "name": "Cubed Pineapple",
+                            "portion": "1/4 cup",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Cubed Cantaloupe",
+                            "portion": "1/4 cup",
                             "calories": 15
+                        },
+                        {
+                            "name": "Cubed Honeydew",
+                            "portion": "1/4 cup",
+                            "calories": 15
+                        },
+                        {
+                            "name": "Banana",
+                            "portion": "1 each",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Grapefruit",
+                            "portion": "1 half",
+                            "calories": 35
+                        },
+                        {
+                            "name": "Granny Smith Apple",
+                            "portion": "1 each",
+                            "calories": 100
+                        },
+                        {
+                            "name": "Orange",
+                            "portion": "1 each",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Oats 'n Honey Granola",
+                            "portion": "3 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Red Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 25
+                        },
+                        {
+                            "name": "Green Seedless Grapes",
+                            "portion": "1/4 cup",
+                            "calories": 30
+                        }
+                    ]
+                },
+                {
+                    "name": "Fruit & Yogurt",
+                    "items": [
+                        {
+                            "name": "Cubed Cantaloupe",
+                            "portion": "2 ounce",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Cubed Pineapple",
+                            "portion": "1/2 cup",
+                            "calories": 40
+                        },
+                        {
+                            "name": "2% Greek Plain Yogurt",
+                            "portion": "4 ounce",
+                            "calories": 90
+                        },
+                        {
+                            "name": "Low Fat Vanilla Yogurt",
+                            "portion": "4 ounce",
+                            "calories": 100
+                        },
+                        {
+                            "name": "Cubed Honeydew",
+                            "portion": "2 ounce",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Low Fat Strawberry Yogurt",
+                            "portion": "4 ounce",
+                            "calories": 110
+                        },
+                        {
+                            "name": "Oats 'n Honey Granola",
+                            "portion": "1 tbsp",
+                            "calories": 20
+                        },
+                        {
+                            "name": "Raisins",
+                            "portion": "1 tbsp",
+                            "calories": 25
+                        },
+                        {
+                            "name": "Light Cream Cheese",
+                            "portion": "1 tbsp",
+                            "calories": 40
+                        },
+                        {
+                            "name": "Sunflower Spread",
+                            "portion": "1 tsp",
+                            "calories": 35
+                        },
+                        {
+                            "name": "Grape Jelly",
+                            "portion": "1 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Strawberry Preserves",
+                            "portion": "1 tbsp",
+                            "calories": 60
+                        },
+                        {
+                            "name": "Butter",
+                            "portion": "1 tbsp",
+                            "calories": 100
+                        },
+                        {
+                            "name": "strawberry cream cheese",
+                            "portion": "2 tbsp",
+                            "calories": 110
                         }
                     ]
                 },
@@ -132,9 +507,29 @@
                     "name": "Flame 2",
                     "items": [
                         {
-                            "name": "Pepperoni Pizza",
+                            "name": "Cheese Pizza",
                             "portion": "1 slice",
-                            "calories": 250
+                            "calories": 210
+                        },
+                        {
+                            "name": "Ham Pizza",
+                            "portion": "1 slice",
+                            "calories": 240
+                        },
+                        {
+                            "name": "Crushed Red Pepper",
+                            "portion": "1 tsp",
+                            "calories": 5
+                        },
+                        {
+                            "name": "Dried Oregano",
+                            "portion": "1 tsp",
+                            "calories": 0
+                        },
+                        {
+                            "name": "Grated Parmesan Cheese",
+                            "portion": "1 tsp",
+                            "calories": 10
                         }
                     ]
                 },
@@ -142,9 +537,14 @@
                     "name": "Bakery-Dessert",
                     "items": [
                         {
-                            "name": "Iced Lemon Cookie Bar",
-                            "portion": "1 piece",
-                            "calories": 320
+                            "name": "Sugar Cookie",
+                            "portion": "1 each",
+                            "calories": 210
+                        },
+                        {
+                            "name": "Deluxe Blondies",
+                            "portion": "1 serving(s)",
+                            "calories": 300
                         }
                     ]
                 }
@@ -165,19 +565,19 @@
                             "calories": 200
                         },
                         {
-                            "name": "French Toast Casserole wtih Chia Seeds",
-                            "portion": "4 ounce",
-                            "calories": 530
+                            "name": "Berry French Toast",
+                            "portion": "4 piece",
+                            "calories": 460
                         },
                         {
-                            "name": "Pork Sausage Patty",
+                            "name": "Turkey Sausage Patty",
                             "portion": "1 each",
-                            "calories": 180
+                            "calories": 60
                         },
                         {
                             "name": "Tater Tots",
                             "portion": "1/2 cup",
-                            "calories": 140
+                            "calories": 130
                         },
                         {
                             "name": "Oatmeal",
@@ -190,9 +590,9 @@
                     "name": "Bakery-Dessert",
                     "items": [
                         {
-                            "name": "Banana Bread",
-                            "portion": "1 slice",
-                            "calories": 170
+                            "name": "Chocolate and Sprinkles Donut",
+                            "portion": "1 each",
+                            "calories": 450
                         },
                         {
                             "name": "Vegan Banana Muffins",
@@ -280,49 +680,24 @@
                     "name": "Comfort",
                     "items": [
                         {
-                            "name": "Tomato Pepper & Onion Beef Taco Meat",
-                            "portion": "2 ounce",
-                            "calories": 90
+                            "name": "Moroccan Chicken",
+                            "portion": "3 oz meat",
+                            "calories": 250
                         },
                         {
-                            "name": "Stewed Pinto Beans with Tomatoes and Onions",
+                            "name": "Bean and Tomato Chili",
                             "portion": "1/2 cup",
-                            "calories": 70
+                            "calories": 170
                         },
                         {
-                            "name": "Cilantro Brown Rice",
-                            "portion": "1/2 cup",
-                            "calories": 180
-                        },
-                        {
-                            "name": "Steamed Yellow Squash",
-                            "portion": "1/2 cup",
-                            "calories": 20
-                        },
-                        {
-                            "name": "Shredded Iceberg Lettuce",
-                            "portion": "1 cup",
-                            "calories": 10
-                        },
-                        {
-                            "name": "Tortilla Chips",
-                            "portion": "1 ounce",
-                            "calories": 150
-                        },
-                        {
-                            "name": "Pico de Gallo",
-                            "portion": "2 floz",
-                            "calories": 20
-                        },
-                        {
-                            "name": "Guacamole",
-                            "portion": "2 floz",
-                            "calories": 70
-                        },
-                        {
-                            "name": "6\" Corn Tortilla",
+                            "name": "Baked Potatoes",
                             "portion": "1 each",
-                            "calories": 35
+                            "calories": 230
+                        },
+                        {
+                            "name": "Steamed Corn Kernels",
+                            "portion": "1/2 cup",
+                            "calories": 90
                         }
                     ]
                 },
@@ -330,14 +705,14 @@
                     "name": "Bakery-Dessert",
                     "items": [
                         {
-                            "name": "Chocolate Chip Cookies",
+                            "name": "Sugar Cookie",
                             "portion": "1 each",
-                            "calories": 130
+                            "calories": 210
                         },
                         {
-                            "name": "Iced Lemon Cookie Bar",
-                            "portion": "1 piece",
-                            "calories": 320
+                            "name": "Deluxe Blondies",
+                            "portion": "1 serving(s)",
+                            "calories": 300
                         }
                     ]
                 },
@@ -410,9 +785,24 @@
                     "name": "500 Degrees",
                     "items": [
                         {
-                            "name": "Beef Hot Dog",
-                            "portion": "1 each",
-                            "calories": 300
+                            "name": "Cheese Pizza",
+                            "portion": "1 slice",
+                            "calories": 210
+                        },
+                        {
+                            "name": "Crushed Red Pepper",
+                            "portion": "1 tsp",
+                            "calories": 5
+                        },
+                        {
+                            "name": "Dried Oregano",
+                            "portion": "1 tsp",
+                            "calories": 0
+                        },
+                        {
+                            "name": "Grated Parmesan Cheese",
+                            "portion": "1 tsp",
+                            "calories": 10
                         }
                     ]
                 },
